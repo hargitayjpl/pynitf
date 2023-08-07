@@ -9,6 +9,11 @@ pipeline {
         } 
     }
     stages {
+        stage('Install pynitf') {
+            steps {
+                sh 'pip install .'
+            }
+        }
         stage('Run Unit Tests') {
             steps {
                 sh 'pytest tests/'

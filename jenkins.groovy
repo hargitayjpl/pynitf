@@ -1,11 +1,8 @@
 pipeline {
-    environment {
-        artifactory_url = credentials('artifactory_url')
-    }
     agent { 
         docker {
-            image "${artifactory_url}"
-            registryUrl 'https://artifactory.jpl.nasa.gov:16003'
+            image "${image_url}"
+            registryUrl "${artifactory_url}"
             registryCredentialsId  'artifactory_credential_id'
             args '--user 0:0'
             reuseNode true

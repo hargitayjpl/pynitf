@@ -1,7 +1,7 @@
 pipeline {
     agent { 
         docker {
-            image "${params.artifactory_url}"
+            image "${artifactory_url}"
             registryUrl 'https://artifactory.jpl.nasa.gov:16003'
             registryCredentialsId  'artifactory_credential_id'
             args '--user 0:0'

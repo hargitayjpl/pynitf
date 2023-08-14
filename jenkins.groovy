@@ -1,4 +1,7 @@
 pipeline {
+    environment {
+        artifactory_url = credentials('artifactory_url')
+    }
     agent { 
         docker {
             image "${artifactory_url}"

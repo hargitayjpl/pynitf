@@ -1,7 +1,7 @@
 pipeline {
     agent { 
         docker {
-            image 'artifactory.jpl.nasa.gov:16003/gov/nasa/jpl/island/imd/centos7-videoapp-env:latest'
+            image "${params.artifactory_url}"
             registryUrl 'https://artifactory.jpl.nasa.gov:16003'
             registryCredentialsId  'artifactory_credential_id'
             args '--user 0:0'
